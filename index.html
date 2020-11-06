@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @charset "utf-8";
+            *{
+                margin:0px;
+                font-family:arial;
+            }
+            div.khung{
+                width:100%;
+                height:auto;
+                margin-left:auto;
+                margin-right:auto;
+                padding-top:0px;
+            }
+            div.menuc{
+                width:84%;
+                height:35px;
+                background-color:#c21e1e;
+                background: -moz-linear-gradient(bottom, #c21e1e 0%, #b13535 50%, #c23b3b 51%, #e84646 78%, #c15757 100%);
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+                color:#ebf0eb;
+                list-style-type:none;
+                font-weight:bold;
+                font-size:13px;
+            }
+            ul.menuc li{
+                list-style-type:none;
+                float:left;
+                padding-left:10px;
+                padding-right:10px;
+                height:25px;
+                padding-top:10px;	
+                color:#FFF;
+            }
+            ul.menuc li:hover{
+                background-color:#ebebeb;
+                color:#000040;
+            }
+
+            ul.menuc li ul.submenu{
+                display:none;
+                background-color:#333;
+                height:auto;
+                width:auto;		
+            }
+            ul.menuc li:hover ul.submenu{
+                display:block;	
+            }
+
+            ul.menuc li ul.submenu li:hover{
+                background-color:#666;	
+            }
+            div.menuc:hover ul.menuc {
+                display:block;
+            }
+
+            div.menu{
+                width:95%;
+                height:40px;
+                background-color:#c21e1e;
+                color:#FFF;
+                padding-left:5%;
+                padding-right:0px;
+                font-weight:bold;
+                font-size:13px;
+            }
+            ul.menu{
+                list-style-type:none;
+            }
+            ul.menu li{
+                list-style-type:none;
+                float:left;
+                padding-left:10px;
+                padding-right:10px;
+                height:28px;
+                padding-top:12px;
+                color:#000000;
+            }
+            ul.menu li a:hover{
+                /*background-color:#ffffff;*/
+                color:#000000;
+                height:auto;
+            }
+            ul.menu a li{
+                color:#ffffff;
+            }
+            div.menu ul li:hover{
+                background-color:#ebebeb;
+                color:#000000;
+            }
+            ul.menu li:hover ul.submenu{
+                display:block;
+            }
+            ul.menu li ul.menu li{
+                float:none;
+            }
+            ul.menu li ul.submenu li:hover{
+                background-color:#66;
+            }
+            div.search{
+                background-image:url:(../images/tim.png);
+            }
+            .searchform {
+                float: right;
+                margin-top: 9px;
+                /*border:#00afdd 2px solid;*/
+                height:30px;
+                width:300px;
+            }
+            .searchform input [type=text]{
+                width:270px;
+                height:21px;
+                border:0px;
+                background:#ffffff;
+                float:right;
+                margin:0px;
+            }
+            .searchform input[type=submit]{
+                /*border:#00afdd 2px solid;*/
+                float:right;
+                /*margin:2px 2px 2px 2px;*/
+                height:23px;
+                margin-right:50px;
+                background:#edbbbb;
+                padding-top:0px;
+            }
+
+            div.banner{
+                width:60%;
+                height:100px;
+                background-color:#FFFFFF;
+                padding-top:4%;
+                margin-left:9%;
+                margin-right:auto;
+                /*margin:0px auto;*/
+            }
+
+            div.main-body{
+                width:84%;
+                /*height:2000px;*/
+                background-color:#fff;
+                margin-left:auto;
+                margin-right:auto;
+                /*border:1px solid #CCC*/
+            }
+            div.Marketingt{
+                float:left;
+                width:5%;
+                padding-left:3px;
+            }
+            div.Marketingp{
+                float:right;
+                padding-right:30px;
+                width:5%;
+            }
+            div.footer{
+                width:100%;
+                height:160px;
+                background-color:#282a2b;
+                padding-top:30px;
+                color:#bebebe;
+                font-size:13px;
+                border-top:5px solid #cd2122;
+            }
+            div.footer p{
+                padding:3px;
+                padding-left:8px;
+                margin-left:110px;
+
+            }
+            /*div.footer p a{
+                    padding-top:15px;
+            }*/
+            div.main-right{
+                width:23%;
+                height:1035px;
+                background-color:#ffffff;
+                float:right;
+                border-left: 1px solid #CCC;
+                padding-left:0px;
+                border-right:1px solid #CCC;
+            }
+            div.main-left{
+                width:57%;
+                height:auto;
+                background-color:#ffffff;
+                float:left;
+                border-right: 1px solid #CCC;
+                padding-right:7px;
+            }
+            div.main-mid{
+                width:19%;
+                height:auto;
+                background-color:#fff;
+                float:left;
+                margin-left:0px;
+                margin-top: 10px;
+                list-style:none;
+                border-left:1px solid #cccccc;
+            }
+            /*div.main-mid a:hover{
+                    text-decoration:underline;
+                    color:#0000ff;
+            }*/
+            div.main-mid li{
+                border-bottom:1px solid #cccccc;
+                color: #44444f;
+                font-size: 14px;
+                margin:15px;
+                line-height: 25px;
+            }
+            div.main-mid li:hover{
+                color:#0000a0;
+            }
+            div.quangcao{
+
+            }
+            div.xoa{
+                clear:both;
+            }
+            div.box{
+                /*border:1px solid #CCC;*/
+                width:100%;
+                height:auto;
+                margin-bottom:10px;
+            }
+            div.box-chitiet{
+                border:1px solid #CCC;
+                width:98%;
+                height:auto;
+                margin-bottom:10px;
+                padding:10px;
+            }/*
+            div.tin-noi-bat{
+                    width:32%;
+                    height:200px;
+                    background-color:#CCC;
+                    float:left;
+            }*/
+            div.box-left{
+                width:58%;
+                height:auto;
+                float:left;
+                /*padding-left:3px;*/
+                color:#444444;
+            }
+
+            div.box-right{
+                width:42%;
+                height:auto;
+                float:left;
+                padding-top:5px;
+            }
+            /*div.box-right{
+                    float:right;
+                    padding-top:5px;
+            }*/
+            div.tieude{
+                width:100%;
+                height:30px;
+                /*background-color:#CCC;*/
+                border-bottom:4px solid #8c8c8c;
+            }
+            ul.danhsachtin li {
+                padding-top:5px;
+                line-height:20px;
+                padding-right:10px;	
+                list-style-image:url(../images/related-story.png);
+            }
+            ul.danhsachtin li a{
+                color:#666;
+                text-decoration:none;
+                font-size:16px;
+            }
+            ul.danhsachtin li a:hover{
+                color:#039;
+                text-decoration:underline;
+            }
+            div.box-left img{
+                margin:5px;
+            }
+            p.tieudetin{
+                font-size:14px;
+                font-weight:bold;
+                color:#09F;
+                padding-left:5px;
+                text-align:justify;
+
+            }
+            p.tomtattin{
+                padding-left:2px;
+                text-indent:20px;
+                font-weight:bold;
+                text-align:justify;
+                font-size:16px;
+                line-height:25px;
+            }
+            p.tieude{
+                font-size:16px;
+                font-weight:bold;
+                color:#09F;
+                margin-left:3px;
+                text-align:justify;
+                margin-top:3px;
+            }
+            p.noidung{
+                font-size:16px;
+                line-height:25px;
+                text-align:justify;
+            }
+            p.tieudekhung{
+                font-size:14px;
+                font-weight:bold;
+                padding-left:5px;
+                padding-top:7px;
+                color:#b21117;
+                font-weight:bold;
+            }
+            a{
+                text-decoration:none;
+            }
+            a:hover{
+                color:#06C;
+            }
+            div.trang{
+                content:"Trang";
+                float:left;
+                background-color:#FFFFFF;
+                color:red;
+                margin-right:3px;
+                border : 1px solid #CCC;
+                font-size:17px;
+                padding:3px;
+                text-align:center;
+            }
+            div.trang:hover{
+                color:#000000;
+                background-color:#CCC;
+            }
+            div.phantrang{
+                text-align:center;
+                background-color:#000000;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
