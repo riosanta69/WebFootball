@@ -33,7 +33,7 @@ public class LoginController extends HttpServlet {
             {
                 HttpSession session = request.getSession(); //session is created
                 session.setAttribute("login", loginBean.getUsername()); //session name is "login" and  store username in "getUsername()" get through loginBean object
-                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp"); //redirect to welcome.jsp page
+                RequestDispatcher rd = request.getRequestDispatcher("home.jsp"); //redirect to welcome.jsp page
                 rd.forward(request, response);
             } else {
                 request.setAttribute("WrongLoginMsg", authorize); //wrong login error message is "WrongLoginMsg"

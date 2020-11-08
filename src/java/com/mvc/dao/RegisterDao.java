@@ -23,11 +23,17 @@ public class RegisterDao {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); //load driver
             Connection con = DriverManager.getConnection(url, user, pass); //create connection
-            PreparedStatement ps = con.prepareStatement("select * from User1 where username = ?");
+            PreparedStatement ps = con.prepareStatement("select * from User1 where username=?");
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
-            if(rs.getString("username").equals(username)) {
-                return "FAIL REGISTER";
+            String comparedUsername = null;
+            if(rs.next())
+                comparedUsername = rs.getString("username");
+
+            if (comparedUsername != null && comparedUsername.equals(username)) {
+                ps.close(); //close statement
+                con.close(); //close connection
+                return "Account has already been registered!";
             }
             ps = con.prepareStatement("insert into User1(firstname,lastname,username,password) values(?,?,?,?)"); //sql insert query
             ps.setString(1, firstname);

@@ -1,6 +1,6 @@
 <%
     if (session.getAttribute("login") != null) {
-        response.sendRedirect("welcome.jsp"); //session login user not back to index.jsp page or not type direct in url
+        response.sendRedirect("home.jsp"); //session login user not back to index.jsp page or not type direct in url
     }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,6 +11,7 @@
 
         <title>Java MVC Login & Register Script Using MySql</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <div class="container">
