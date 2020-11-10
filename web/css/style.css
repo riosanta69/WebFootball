@@ -33,3 +33,8 @@ hr {
     background-color: #dc3545 !Important;
     border: solid 1px #dc3545;
 }
+
+img.img-fluid {
+    width: 100%;
+    display: block;
+}

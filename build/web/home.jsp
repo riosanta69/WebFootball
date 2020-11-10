@@ -1,9 +1,13 @@
 
 
+<%@page import="com.mvc.bean.PageBean"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <jsp:useBean id="t" class="com.mvc.dao.PageDao" scope="request" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Trang chủ</title>
         <link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,6 +34,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Champions League</a>
                         </li>
+
+                        <li class="nav-item disabled">
+                            <a class="nav-link">Welcome <% out.println(session.getAttribute("login"));%>!</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.jsp">Log out</a>
                         </li>
@@ -40,31 +48,33 @@
                     </form>
                 </div>
             </nav>
-
             <div class="container-fluid">
-                <div class="row my-2">
-                    <div class="col-sm-4">
-                        <img src="img/10.jpg" class="img-fluid">
+                <c:forEach items="${pagesInSlide}" var="page">
+                    <div class="row my-2">
+                        <div class="col-sm-4">
+                            <img src="img/<c:out value="${page.getId()}" />.jpg" class="img-fluid">
+                        </div>
+                        <div class ="col-sm-8">
+                            <h2><c:out value="${page.getHeading()}" /></h2>
+                            <p><c:out value="${page.getSummary()}" /></p>
+                        </div>
                     </div>
-                    <div class ="col-sm-8">
-                        <h2>Some heading</h2>
-                        <p>Some summary</p>
-                    </div>
-                </div>
-                <hr/>
+                    <hr/>
+                </c:forEach>
             </div>
-            
+
+
             <nav aria-lable="page side bar">
                 <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1">Previous</a>
                     </li>
-                    <li class="page-item active">
-                        <a class="page-link" href="#" tabindex="-1">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" tabindex="-1">2</a>
-                    </li>
+                    <c:forEach var = "i" begin = "1" end = "${numSlides}">
+                        <li class="page-item <c:if test="${i == slideId}">active</c:if>">
+                            <a class="page-link" href="home.jsp?id=<c:out value="${i}"/>" tabindex="-1"><c:out value="${i}"/></a>
+                        </li>
+                    </c:forEach>
+
                     <li class="page-item">
                         <a class="page-link" href="#" tabindex="-1">Next</a>
                     </li>

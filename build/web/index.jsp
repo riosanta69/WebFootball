@@ -1,8 +1,3 @@
-<%
-    if (session.getAttribute("login") != null) {
-        response.sendRedirect("home.jsp"); //session login user not back to index.jsp page or not type direct in url
-    }
-%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

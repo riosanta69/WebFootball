@@ -19,7 +19,7 @@ public class LoginController extends HttpServlet {
         {
             String username = request.getParameter("username"); //get textbox name "username"
             String password = request.getParameter("password"); //get textbox name "txt_password"
-            
+
             LoginBean loginBean = new LoginBean(); //this class contain seeting up all received values from index.jsp page to setter and getter method for application require effectively 
 
             loginBean.setUsername(username); //set username through loginBean object
@@ -32,8 +32,9 @@ public class LoginController extends HttpServlet {
             if (authorize.equals("SUCCESS LOGIN")) //check calling authorizeLogin() function receive string "SUCCESS LOGIN" message after continue process
             {
                 HttpSession session = request.getSession(); //session is created
-                session.setAttribute("login", loginBean.getUsername()); //session name is "login" and  store username in "getUsername()" get through loginBean object
-                RequestDispatcher rd = request.getRequestDispatcher("home.jsp"); //redirect to welcome.jsp page
+                session.setAttribute("login", loginBean.getName()); //session name is "login" and  store username in "getUsername()" get through loginBean object
+//                request.setAttribute("id", 1);
+                RequestDispatcher rd = request.getRequestDispatcher("PageController"); //redirect to welcome.jsp page
                 rd.forward(request, response);
             } else {
                 request.setAttribute("WrongLoginMsg", authorize); //wrong login error message is "WrongLoginMsg"

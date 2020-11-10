@@ -28,6 +28,7 @@ public class LoginDao {
             while (rs.next()) {
                 dbusername = rs.getString("username");
                 dbpassword = rs.getString("password");
+                loginBean.setName(rs.getString("firstname"), rs.getString("lastname"));
                 if (username.equals(dbusername) && password.equals(dbpassword)) {
                     return "SUCCESS LOGIN";
                 }

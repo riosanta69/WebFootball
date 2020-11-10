@@ -20,6 +20,13 @@ public class PageBean {
 
     }
 
+    public PageBean(int id, String heading, String summary, String content) {
+        this.id = id;
+        this.heading = heading;
+        this.summary = summary;
+        this.content = content;
+    }
+
     public int getId() {
         return id;
     }
