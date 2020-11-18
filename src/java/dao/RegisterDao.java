@@ -27,8 +27,9 @@ public class RegisterDao {
             ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             String comparedUsername = null;
-            if(rs.next())
+            if (rs.next()) {
                 comparedUsername = rs.getString("username");
+            }
 
             if (comparedUsername != null && comparedUsername.equals(username)) {
                 ps.close(); //close statement

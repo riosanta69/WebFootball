@@ -7,8 +7,6 @@ package controller;
 
 import dao.PageDao;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Riosanta69
  */
 public class AddController extends HttpServlet {
+
     private PageDao dao = new PageDao();
 
     /**
@@ -80,7 +79,7 @@ public class AddController extends HttpServlet {
         System.out.println(summary);
         System.out.println(content);
         dao.addPage(type, heading, summary, content);
-        
+
         RequestDispatcher rd = request.getRequestDispatcher("PageController?id=1&type=ALL"); //show error same home.jsp page
         rd.forward(request, response);
     }

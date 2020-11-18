@@ -7,7 +7,6 @@ package controller;
 
 import dao.PageDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Riosanta69
  */
 public class DeleteController extends HttpServlet {
+
     private PageDao dao = new PageDao();
 
     /**
@@ -35,7 +35,7 @@ public class DeleteController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String type = request.getParameter("type");
         dao.deletePage(id);
-        response.sendRedirect("PageController?id=1&type="+type);
+        response.sendRedirect("PageController?id=1&type=" + type);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

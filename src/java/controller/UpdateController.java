@@ -7,7 +7,6 @@ package controller;
 
 import dao.PageDao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Riosanta69
  */
 public class UpdateController extends HttpServlet {
+
     private PageDao dao = new PageDao();
 
     /**
@@ -53,7 +53,7 @@ public class UpdateController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         request.setAttribute("page", dao.getPage(id));
         request.setAttribute("pageType", dao.getPageType(id));
-        RequestDispatcher rd = request.getRequestDispatcher("update_page.jsp"); 
+        RequestDispatcher rd = request.getRequestDispatcher("update_page.jsp");
         rd.include(request, response);
     }
 
@@ -75,8 +75,8 @@ public class UpdateController extends HttpServlet {
         String summary = request.getParameter("input-summary");
         String content = request.getParameter("input-content");
         dao.updatePage(id, type, heading, summary, content);
-        
-        RequestDispatcher rd = request.getRequestDispatcher("PageController?id="+request.getParameter("slidePos")+"&type="+request.getParameter("type")); //show error same home.jsp page
+
+        RequestDispatcher rd = request.getRequestDispatcher("PageController?id=" + request.getParameter("slidePos") + "&type=" + request.getParameter("type")); //show error same home.jsp page
         rd.forward(request, response);
     }
 

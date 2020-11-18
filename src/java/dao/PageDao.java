@@ -39,7 +39,7 @@ public class PageDao {
         }
         return page;
     }
-    
+
     public String getPageType(int id) {
         String page = null;
         try {
@@ -177,7 +177,7 @@ public class PageDao {
     public void updatePage(int id, String type, String heading, String summary, String content) {
         try {
             conn = new DBContext().getConnection();
-             
+
             String sql = "update Page set heading=?, summary=?, page_content=? where id=?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, heading);
