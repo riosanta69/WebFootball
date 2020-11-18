@@ -1,4 +1,4 @@
-package com.mvc.controller;
+package controller;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mvc.bean.RegisterBean;
-import com.mvc.dao.RegisterDao;
+import model.Register;
+import dao.RegisterDao;
 
 public class RegisterController extends HttpServlet {
 
@@ -22,7 +22,7 @@ public class RegisterController extends HttpServlet {
             String username = request.getParameter("txt_username");  //get all textbox name from register.jsp page
             String password = request.getParameter("txt_password");
 
-            RegisterBean registerBean = new RegisterBean(); //this class contain  seeting up all received values from register.jsp page to setter and getter method for application require effectively
+            Register registerBean = new Register(); //this class contain  seeting up all received values from register.jsp page to setter and getter method for application require effectively
 
             registerBean.setFirstname(firstname);
             registerBean.setLastname(lastname);

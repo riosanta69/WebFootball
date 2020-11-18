@@ -1,6 +1,6 @@
-package com.mvc.dao;
+package dao;
 
-import com.mvc.bean.LoginBean;
+import model.Login;
 import context.DBContext;
 
 import java.sql.Connection;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 
 public class LoginDao {
 
-    public String authorizeLogin(LoginBean loginBean) //create authorizeLogin()function
+    public String authorizeLogin(Login loginBean) //create authorizeLogin()function
     {
         String username = loginBean.getUsername(); //get username value through loginBean object and store in temporary variable "username"
         String password = loginBean.getPassword(); //get password value through loginBean object and store in temporary variable "password"

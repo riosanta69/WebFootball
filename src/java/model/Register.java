@@ -1,6 +1,6 @@
-package com.mvc.bean;
+package model;
 
-public class RegisterBean 
+public class Register 
 {
     private String firstname,lastname,username,password;
     

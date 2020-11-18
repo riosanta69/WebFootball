@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/dao/LoginDao.java</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/logout.jsp</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/index.jsp</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/controller/RegisterController.java</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/controller/LoginController.java</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/bean/PageBean.java</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/home.jsp</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/home_vn.jsp</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/register.jsp</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/controller/PageController.java</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/web/css/style.css</file>
-            <file>file:/C:/Users/Riosanta69/OneDrive/Máy%20tính/java_mvc_register_login/src/java/com/mvc/dao/PageDao.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

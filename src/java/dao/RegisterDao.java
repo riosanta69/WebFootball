@@ -1,15 +1,15 @@
-package com.mvc.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import com.mvc.bean.RegisterBean;
+import model.Register;
 import java.sql.ResultSet;
 
 public class RegisterDao {
 
-    public String authorizeRegister(RegisterBean registerBean) //create authorizeRegister()function
+    public String authorizeRegister(Register registerBean) //create authorizeRegister()function
     {
         String firstname = registerBean.getFirstname();
         String lastname = registerBean.getLastname();

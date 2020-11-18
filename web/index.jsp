@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h2>Login</h2>  
+            <h2>Admin Login</h2>  
             <form method="post" action="LoginController" name="LoginForm" onsubmit="return validate();">
 
                 <div class="form-group">
@@ -35,6 +35,7 @@
                 <input type="submit" class="btn btn-primary" name="btn_login" value="Login">
 
                 <p>Your don't have a account? <a href="register.jsp">Register</a></p>
+                <p>View page as a guest user? <a href="PageController?id=1&type=ALL">Click here</a></p>
 
             </form>
 

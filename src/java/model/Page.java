@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mvc.bean;
+package model;
 
 /**
  *
  * @author Riosanta69
  */
-public class PageBean {
+public class Page {
 
     private int id;
     private String heading;
     private String summary;
     private String content;
 
-    public PageBean() {
+    public Page() {
 
     }
 
-    public PageBean(int id, String heading, String summary, String content) {
+    public Page(int id, String heading, String summary, String content) {
         this.id = id;
         this.heading = heading;
         this.summary = summary;

@@ -1,6 +1,6 @@
-package com.mvc.bean;
+package model;
 
-public class LoginBean 
+public class Login 
 {
     private String username,password, firstName, lastName;
     

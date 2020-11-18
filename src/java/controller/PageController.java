@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mvc.controller;
+package controller;
 
-import com.mvc.bean.PageBean;
-import com.mvc.dao.PageDao;
+import model.Page;
+import dao.PageDao;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -22,14 +22,18 @@ import javax.servlet.http.HttpServletResponse;
 public class PageController extends HttpServlet {
 
     public void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PageDao pageDao = new PageDao();
         int slideId = Integer.parseInt(getRequestParameter(request, "id"));
-        List<PageBean> pageInSlideList = pageDao.getAllPages(slideId);
+        String pageType = getRequestParameter(request, "type");
+        List<Page> pageInSlideList = pageDao.getAllPages(slideId, pageType);
         request.setAttribute("pagesInSlide", pageInSlideList);
-        request.setAttribute("slideId", slideId);
-        request.setAttribute("numSlides", (int) Math.ceil(pageDao.getAllPages().size() / 5.0));
-        RequestDispatcher rd = request.getRequestDispatcher("home.jsp"); //show error same home.jsp page
+        request.setAttribute("pageType", pageType);
+        request.setAttribute("id", slideId);
+        request.setAttribute("numSlides", (int) Math.ceil(pageDao.getAllPages(pageType).size() / 5.0));
+        RequestDispatcher rd = request.getRequestDispatcher("home.jsp?id=" + slideId + "&type=" + pageType); //show error same home.jsp page
         rd.forward(request, response);
 
     }
@@ -38,7 +42,7 @@ public class PageController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+
     }
 
     @Override
@@ -46,9 +50,9 @@ public class PageController extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
-    protected  String getRequestParameter(HttpServletRequest request, String name) {
+
+    protected String getRequestParameter(HttpServletRequest request, String name) {
         String param = request.getParameter(name);
-        return !param.isEmpty() ? param : getInitParameter(name);
+        return param != null ? param : getInitParameter(name);
     }
 }

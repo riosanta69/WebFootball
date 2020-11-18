@@ -38,3 +38,7 @@ img.img-fluid {
     width: 100%;
     display: block;
 }
+
+a.nav-link.link-footer:visited {
+    color: white;
+}
